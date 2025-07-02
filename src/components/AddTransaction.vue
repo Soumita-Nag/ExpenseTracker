@@ -4,6 +4,7 @@
       <h3 class="text-2xl font-semibold text-white pb-2 border-b border-pink-300">
         Add New Transaction
       </h3>
+      <p class="pl-1 text-sm opacity-80">Add -ve sign in case of expense</p>
     </div>
 
     <form @submit.prevent="onSubmit" class="space-y-6 w-full">

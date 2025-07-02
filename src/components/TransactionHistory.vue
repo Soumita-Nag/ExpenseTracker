@@ -19,7 +19,7 @@
         </h4>
       </div>
       <button
-        class="delete-btn absolute right-[-22px] top-1/2 -translate-y-1/2 bg-pink-600 hover:bg-pink-700 text-white border-0 px-[6px] py-[2px] rounded-r cursor-pointer shadow-lg opacity-0"
+        class="delete-btn absolute right-[-22px] top-1/2 -translate-y-1/2 bg-pink-600 hover:bg-pink-700 text-white border-0 px-[6px] py-[2px] rounded-r cursor-pointer shadow-lg opacity-0 font-bold"
         @click="deleteList(item.id)"
       >
         X
@@ -47,7 +47,7 @@ const deleteList = (id) => {
   border-right: 5px solid #19c363;
 }
 .minus {
-  border-right: 5px solid #ff4949;
+  border-right: 5px solid #e90042;
 }
 .delete-btn {
   line-height: 20px;

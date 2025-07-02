@@ -4,6 +4,7 @@
   import IncomeExpenses from './components/IncomeExpenses.vue';
   import AddTransaction from './components/AddTransaction.vue';
   import TransactionHistory from './components/TransactionHistory.vue';
+  import FooterPage from './components/FooterPage.vue'
 
   import { ref, computed, onMounted } from 'vue';
   import { useToast } from "vue-toastification";
@@ -73,6 +74,7 @@
         <TransactionHistory :transactions="transactions" @deleteTransaction="deleteTransaction" />
       </div>
     </div>
+    <FooterPage/>
   </div>
 </template>
 
