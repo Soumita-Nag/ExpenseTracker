@@ -45,6 +45,7 @@
       text: transactionData.text,
       cost: transactionData.cost
     })
+    toast.success("Transaction added successfully");
     updateLocalStorage();
   }
 
