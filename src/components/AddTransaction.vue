@@ -14,7 +14,6 @@
             id="text"
             placeholder="Enter Text"
             class="px-4 py-2 rounded-md border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            required
             v-model="text"
           />
         </div>
@@ -26,7 +25,6 @@
             id="amt"
             placeholder="Enter Amount"
             class="px-4 py-2 rounded-md border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            required
             v-model="cost"
           />
         </div>
@@ -68,12 +66,39 @@
 
 <script setup>
 import { ref } from "vue";
+import { useToast } from "vue-toastification";
+
 const text=ref('')
 const cost=ref('')
 
+const toast=useToast()
+
+const emit=defineEmits(['transactionSubmit'])
+
 const onSubmit=()=>{
-  alert("submit")
-  console.log(text.value, cost.value);
+  if(!text.value && !cost.value){
+    toast.error("Both fields must be filled!");
+    return
+  }
+  else if(!text.value){
+    toast.error("Text field cannot be empty!")
+    return
+  }
+  else if(!cost.value){
+    toast.error("Cost field cannot be empty!")
+    return
+  }
+  else{
+    toast.success("Transaction added successfully")
+  }
+
+  const transactionData={
+    text:text.value,
+    cost:parseFloat(cost.value)
+  }
+  emit('transactionSubmit',transactionData);
+  text.value=''
+  cost.value=''
 }
 </script>
 
