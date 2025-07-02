@@ -67,8 +67,8 @@ const deleteTransaction=(id)=>{
       <div class="w-full bg-[var(--color-bg-secondary-dark)] mt-2 p-4">
         <Balance :balance="balance"/>
         <IncomeExpenses :income="income" :expenses="expenses"/>
-        <TransactionHistory :transactions="transactions" @deleteTransaction="deleteTransaction"/> 
         <AddTransaction @transactionSubmit="saveTransaction"/>
+        <TransactionHistory :transactions="transactions" @deleteTransaction="deleteTransaction"/> 
       </div>
     </div>
   </div>

@@ -5,19 +5,6 @@
     </div>
 </template>
 <script>
-    export default{
-        data(){
-            return{
-                
-            }
-        },
-        props:{
-            theme:String,
-        },
-        methods:{
-            
-        },
-    }
 </script>
 <style scoped>
     
