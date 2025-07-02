@@ -6,7 +6,28 @@
   import TransactionHistory from './components/TransactionHistory.vue';
 
   import {ref,computed} from 'vue';
-  const transactions=ref([]);
+  import { useToast } from "vue-toastification";
+  const toast=useToast()
+  const transactions=ref([{
+        id:1,
+        text:"Food",
+        cost:-200,
+    },
+    {
+        id:2,
+        text:"oil",
+        cost:-500,
+    },
+    {
+        id:3,
+        text:"tusn",
+        cost:1000,
+    },
+    {
+        id:4,
+        text:"salary",
+        cost:50000,
+    },]);
 const balance=computed(()=>{
     return transactions.value.reduce((acc,t)=>{
         return acc+t.cost
@@ -37,6 +58,10 @@ const saveTransaction=(transactionData)=>{
 const generateUniqId=()=>{
   return Math.floor(Math.random() * 100000);
 }
+const deleteTransaction=(id)=>{
+  transactions.value=transactions.value.filter((t)=>t.id!=id);
+  toast.success('Transaction Deleted')
+}
 </script>
 
 <template>
@@ -48,7 +73,7 @@ const generateUniqId=()=>{
       <div class="w-full bg-[var(--color-bg-secondary-dark)] mt-2 p-4">
         <Balance :balance="balance"/>
         <IncomeExpenses :income="income" :expenses="expenses"/>
-        <TransactionHistory :transactions="transactions"/> 
+        <TransactionHistory :transactions="transactions" @deleteTransaction="deleteTransaction"/> 
         <AddTransaction @transactionSubmit="saveTransaction"/>
       </div>
     </div>

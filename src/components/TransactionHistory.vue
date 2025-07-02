@@ -37,8 +37,9 @@
             required: true,
         }
     })
+    const emit=defineEmits(['deleteTransaction'])
     const deleteList=(id)=>{
-      alert(id);
+      emit('deleteTransaction',id)
     }
 </script>
 
