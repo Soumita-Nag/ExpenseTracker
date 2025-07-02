@@ -4,18 +4,19 @@
       Your Balance
     </h3>
     <h2 class="text-3xl font-bold text-white mt-1">
-      $1045.25
+      ₹{{ balance }}
     </h2>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-  methods: {},
-};
+<script setup>
+    import { defineProps } from "vue";
+    const props=defineProps({
+        balance:{
+            type:Number,
+            required:true
+        }
+    })
 </script>
 
 <style scoped>
