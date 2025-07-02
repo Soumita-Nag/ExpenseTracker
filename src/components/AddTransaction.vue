@@ -4,7 +4,7 @@
       <h3 class="text-2xl font-semibold text-white pb-2 border-b border-gray-600">Add New Transaction</h3>
     </div>
 
-    <form @submit.prevent class="space-y-6">
+    <form @submit.prevent="onSubmit" class="space-y-6 w-full">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="flex flex-col">
           <label for="text" class="mb-1 text-sm font-medium text-gray-300">Text</label>
@@ -14,21 +14,25 @@
             id="text"
             placeholder="Enter Text"
             class="px-4 py-2 rounded-md border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            required
+            v-model="text"
           />
         </div>
         <div class="flex flex-col">
           <label for="amt" class="mb-1 text-sm font-medium text-gray-300">Amount</label>
           <input
-            type="number"
+            type="text"
             name="amt"
             id="amt"
             placeholder="Enter Amount"
             class="px-4 py-2 rounded-md border border-gray-600 bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            required
+            v-model="cost"
           />
         </div>
       </div>
 
-      <div class="flex items-center gap-4">
+      <!-- <div class="flex items-center gap-4">
         <div class="flex items-center">
           <input
             type="radio"
@@ -50,11 +54,11 @@
           />
           <label for="expenses" class="ml-2 text-sm text-gray-300">Expenses</label>
         </div>
-      </div>
+      </div> -->
 
       <button
-        type="button"
-        class="w-full sm:w-auto px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition"
+        type="submit"
+        class="w-full cursor-pointer px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 transition"
       >
         Add Transaction
       </button>
@@ -62,14 +66,15 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      picked: null,
-    };
-  },
-};
+<script setup>
+import { ref } from "vue";
+const text=ref('')
+const cost=ref('')
+
+const onSubmit=()=>{
+  alert("submit")
+  console.log(text.value, cost.value);
+}
 </script>
 
 <style scoped>

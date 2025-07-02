@@ -27,3 +27,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Install Vue Toastification:
+```sh
+npm i vue-toastification@next
+```

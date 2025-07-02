@@ -53,7 +53,7 @@ const expenses=computed(()=>{
   <div class=" bg-[var(--color-bg-dark)] text-white flex flex-col items-center md:p-0 pl-2 pr-2">
     <div class="xl:w-[50%] lg:w-[60%] md:w-[70%] w-full mt-2 mb-2">
       <div>
-        <NavBar :theme="theme"/>
+        <NavBar/>
       </div>
       <div class="w-full bg-[var(--color-bg-secondary-dark)] mt-2 p-4">
         <Balance :balance="balance"/>
