@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center w-full px-4">
-    <div class="w-full max-w-xl flex gap-4">
+    <div class="w-full flex gap-4">
       <!-- Income Box -->
       <div class="flex flex-col justify-center items-center w-1/2 p-6 rounded-xl bg-gray-800 text-white shadow-md">
         <h3 class="text-lg font-semibold uppercase">Income</h3>

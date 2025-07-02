@@ -21,7 +21,7 @@
 </script>
 
 <template>
-  <div class=" bg-[var(--color-bg-dark)] text-white h-[100vh] flex flex-col items-center md:p-0 pl-2 pr-2">
+  <div class=" bg-[var(--color-bg-dark)] text-white flex flex-col items-center md:p-0 pl-2 pr-2">
     <div class="xl:w-[60%] lg:w-[70%] md:w-[80%] w-full mt-2">
       <div>
         <NavBar :theme="theme"/>

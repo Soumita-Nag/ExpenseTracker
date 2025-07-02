@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-xl mx-auto mt-5 p-6 bg-gray-800 shadow-md rounded-xl transition-all duration-300">
+  <div class=" mx-auto mt-5 p-6 bg-gray-800 shadow-md rounded-xl transition-all duration-300">
     <div class="mb-6">
-      <h3 class="text-2xl font-semibold text-white">Add New Transaction</h3>
+      <h3 class="text-2xl font-semibold text-white pb-2 border-b border-gray-600">Add New Transaction</h3>
     </div>
 
     <form @submit.prevent class="space-y-6">
