@@ -76,10 +76,16 @@ const addIncome = () => {
     toast.error("Amount must contain Numeric Value!");
     return;
   }
+  const date=new Date();
+  const day=date.getDate();
+  const month=date.getMonth()+1;
+  const year=date.getFullYear();
+  const today=day+"-"+month+"-"+year;
 
   const transactionData = {
     text: text.value,
-    cost: parseFloat(cost.value)
+    cost: parseFloat(cost.value),
+    date: today
   };
   emit('transactionSubmit', transactionData);
   text.value = '';
@@ -100,10 +106,16 @@ const addExpense = () => {
     toast.error("Amount must contain Numeric Value!");
     return;
   }
-
+  const date=new Date();
+  const day=date.getDate();
+  const month=date.getMonth()+1;
+  const year=date.getFullYear();
+  const today=day+"-"+month+"-"+year;
+  // alert(today);
   const transactionData = {
     text: text.value,
-    cost: parseFloat(cost.value*(-1))
+    cost: parseFloat(cost.value*(-1)),
+    date: today,
   };
   emit('transactionSubmit', transactionData);
   text.value = '';

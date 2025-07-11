@@ -44,7 +44,8 @@
     transactions.value.unshift({
       id: generateUniqId(),
       text: transactionData.text,
-      cost: transactionData.cost.toFixed(2)
+      cost: transactionData.cost.toFixed(2),
+      date: transactionData.date
     })
     toast.success("Transaction added successfully");
     updateLocalStorage();
