@@ -16,7 +16,7 @@
             <h4 class="font-medium capitalize">{{ item.text }}</h4>
             <p class="pl-2 pt-1.5 opacity-70 text-[0.72rem] hidden lg:block">{{ item.date }}</p>
           </span>
-          <h4 class="font-semibold">₹{{ item.cost < 0 ? item.cost * -1 : item.cost }}</h4>
+          <h4 class="font-semibold">₹{{ item.cost < 0 ? (item.cost * -1).toFixed(2) : item.cost }}</h4>
         </div>
         <p class="pl-2 opacity-70 text-[0.72rem] lg:hidden">{{ item.date }}</p>
       </div>
