@@ -13,7 +13,7 @@
       >
         <div class="flex justify-between items-center">
           <span class="flex">
-            <h4 class="font-medium">{{ item.text }}</h4>
+            <h4 class="font-medium capitalize">{{ item.text }}</h4>
             <p class="pl-2 pt-1.5 opacity-70 text-[0.72rem] hidden lg:block">{{ item.date }}</p>
           </span>
           <h4 class="font-semibold">₹{{ item.cost < 0 ? item.cost * -1 : item.cost }}</h4>
