@@ -41,7 +41,7 @@
   })
 
   const saveTransaction = (transactionData) => {
-    transactions.value.push({
+    transactions.value.unshift({
       id: generateUniqId(),
       text: transactionData.text,
       cost: transactionData.cost.toFixed(2)
