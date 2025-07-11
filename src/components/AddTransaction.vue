@@ -61,7 +61,11 @@ const onSubmit = () => {
     toast.error("Text field cannot be empty!");
     return;
   } else if (!cost.value) {
-    toast.error("Cost field cannot be empty!");
+    toast.error("Amount field cannot be empty!");
+    return;
+  }
+  else if(isNaN(cost.value)){
+    toast.error("Amount must contain Numeric Value!");
     return;
   }
 
