@@ -25,26 +25,26 @@
   const transactions = ref([]);
 
   const balance = computed(() => {
-    return transactions.value.reduce((acc, t) => acc + t.cost, 0)
+    return transactions.value.reduce((acc, t) => acc + parseFloat(t.cost), 0)
   })
 
   const income = computed(() => {
     return transactions.value
       .filter((transaction) => transaction.cost >= 0)
-      .reduce((acc, t) => acc + t.cost, 0)
+      .reduce((acc, t) => acc + parseFloat(t.cost), 0)
   })
 
   const expenses = computed(() => {
     return transactions.value
       .filter((transaction) => transaction.cost < 0)
-      .reduce((acc, t) => acc + t.cost, 0)
+      .reduce((acc, t) => acc + parseFloat(t.cost), 0)
   })
 
   const saveTransaction = (transactionData) => {
     transactions.value.push({
       id: generateUniqId(),
       text: transactionData.text,
-      cost: transactionData.cost
+      cost: transactionData.cost.toFixed(2)
     })
     toast.success("Transaction added successfully");
     updateLocalStorage();
