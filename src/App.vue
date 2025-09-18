@@ -59,14 +59,14 @@ const generateUniqId = () => {
 const deleteTransaction = async (id) => {
   const result = await Swal.fire({
     title: 'Are you sure?',
-    text: "This transaction will be deleted permanently!",
+    text: 'This transaction will be deleted permanently!',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#d33',
     cancelButtonColor: '#3085d6',
     confirmButtonText: 'Yes, delete it!',
     cancelButtonText: 'Cancel',
-    background:'#1e0149',
+    background: '#1e0149',
     color: 'white',
   })
 
