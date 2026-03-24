@@ -34,8 +34,18 @@
             inputmode="numeric"
           />
         </div>
+        <div class="flex flex-col flex-1 min-w-[200px]">
+          <label for="amt" class="mb-1 text-sm font-medium text-pink-200">Date</label>
+          <input
+              type="date"
+              name="date"
+              id="date"
+              class=" px-4 py-2 rounded-md border border-pink-400/40 bg-purple-950 text-white focus:outline-none focus:ring-2 focus:ring-pink-400"
+              v-model="today"
+            />
+        </div>
 
-        <div class="flex items-center">
+        <!-- <div class="flex items-center">
           <div class="relative">
             <button
               type="button"
@@ -67,7 +77,7 @@
               v-model="today"
             />
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="flex gap-5 mt-4">
@@ -106,8 +116,8 @@ const calcDate = () => {
   const year = date.getFullYear()
   const month = (date.getMonth() + 1).toString().padStart(2, '0')
   const day = date.getDate().toString().padStart(2, '0')
-  today.value = `${day}-${month}-${year}`
-  // today.value = `${year}-${month}-${day}`
+  // today.value = `${day}-${month}-${year}`
+  today.value = `${year}-${month}-${day}`
 }
 
 const toggleDateInput = () => {
